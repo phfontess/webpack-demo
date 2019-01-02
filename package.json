@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/phfontess/webpack-demo#readme",
   "devDependencies": {
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2"
   },
