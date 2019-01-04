@@ -7,6 +7,8 @@ import { square } from './math';
 
 const element = document.createElement('div');
 function component() {
+    const array = [... new Array(3)]
+    console.log(array);
     element.innerHTML = _.join(['Hello', 'webpack', `3 at square is ${square(3)}`], ' ');
     element.classList.add('hello');
     buildIcon();
@@ -22,7 +24,7 @@ function buildIcon () {
 
 function buildButton (){
     const btn = document.createElement('button');
-    btn.innerHTML = 'Click me and check the console!';
+    btn.innerHTML = 'Click me and check the alert!';
     btn.onclick = printMe
     appendComponent(btn);
 }
