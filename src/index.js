@@ -1,34 +1,34 @@
 import _ from 'lodash';
-import printMe from './print';
 import './style.css'
 import Icon from './icon.jpg';
+import printMe from './print';
 
-function render() {
-    const element = document.createElement('div');
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+import { square } from './math';
+
+const element = document.createElement('div');
+function component() {
+    element.innerHTML = _.join(['Hello', 'webpack', `3 at square is ${square(3)}`], ' ');
     element.classList.add('hello');
-    this.buildIcon();
-    this.buildButton()
-
-    this.buildIcon = function() {
-        const myIcon = new Image()
-        myIcon.src = Icon;
-        this.appendComponent(myIcon)
-    }
-    
-    this.buildButton = function(){
-        const btn = document.createElement('button');
-        btn.innerHTML = 'Click me and check the console!';
-        btn.onclick = printMe;
-        this.appendComponent(btn)
-    }
-    
-    this.appendComponent = function(component) {
-        element.appendChild(component);
-    }
-
+    buildIcon();
+    buildButton();
     return element;
 }
 
+function buildIcon () {
+    const myIcon = new Image()
+    myIcon.src = Icon;
+    appendComponent(myIcon)
+}
 
-document.body.appendChild(render());
+function buildButton (){
+    const btn = document.createElement('button');
+    btn.innerHTML = 'Click me and check the console!';
+    btn.onclick = printMe
+    appendComponent(btn);
+}
+
+function appendComponent (component) {
+    element.appendChild(component);
+}
+
+document.body.appendChild(component());
